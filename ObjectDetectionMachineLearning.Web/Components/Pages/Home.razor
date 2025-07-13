@@ -1,6 +1,5 @@
 ﻿@page "/"
 
-
 <PageTitle>Home</PageTitle>
 
 <h1>Object detection using Machine learning</h1>
@@ -27,7 +26,7 @@
         <div class="col overflow-scroll">
             <label class="alert-info">Preview of the selected image</label>
             <div>
-                <img id="PreviewImage" style="min-width:200px;min-height:200px;border:1px solid black;" src="@UploadedImagePreview" onload="rescaleCanvas()" /><br />
+                <img id="PreviewImage" style="border:1px solid black;" src="@UploadedImagePreview" onload="rescaleCanvas()" /><br />
             </div>
         </div>
         <div class="col overflow-scroll">
@@ -41,68 +40,77 @@
 </div>
 
 
+
 <script type="text/javascript">
+    var colorPalette = [
+        "red", "yellow", "blue", "green", "fuchsia",
+        "moccasin", "purple", "magenta", "aliceblue",
+        "lightyellow", "lightgreen"
+    ];
 
-    var colorPalette = ["red", "yellow", "blue", "green", "fuchsia", "moccasin", "purple", "magenta", "aliceblue", "lightyellow", "lightgreen"];
+    function rescaleCanvas() {
+        var img = document.getElementById('PreviewImage');
+        var canvas = document.getElementById('PreviewImageBbox');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+    }
 
-    function rescaleCanvas() {
-        var img = document.getElementById('PreviewImage');
-        var canvas = document.getElementById('PreviewImageBbox');
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-    }
+    function getColor() {
+        var colorIndex = Math.floor(Math.random() * colorPalette.length);
+        return colorPalette[colorIndex];
+    }
 
-    function getColor() {
-        var colorIndex = parseInt(Math.random() * 10);
-        var color = colorPalette[colorIndex];
-        return color;
-    }
+    function LoadBoundingBoxes(objectDescriptions) {
+        if (!objectDescriptions) {
+            alert('No objects found in image.');
+            return;
+        }
 
-    function LoadBoundingBoxes(objectDescriptions) {
-        debugger
-        if (objectDescriptions == null || objectDescriptions == false) {
-            alert('did not find any objects in image. returning from calling load bounding boxes : ' + objectDescriptions);
-            return;
-        }
+        var objectDesc = typeof objectDescriptions === "string"
+            ? JSON.parse(objectDescriptions)
+            : objectDescriptions;
 
-        var objectDesc = JSON.parse(objectDescriptions); //no need to parse js object again here, since it is already Js object (JSON.parse call is now removed)
-        //alert('calling load bounding boxes, starting analysis on clientside js : ' + objectDescriptions);
+        rescaleCanvas();
 
-        rescaleCanvas();
-        var canvas = document.getElementById('PreviewImageBbox');
-        var img = document.getElementById('PreviewImage');
+        var canvas = document.getElementById('PreviewImageBbox');
+        var img = document.getElementById('PreviewImage');
+        var ctx = canvas.getContext('2d');
 
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
+        // Draw the image first
+        ctx.drawImage(img, 0, 0);
 
-        ctx.font = "10px Verdana";
+        ctx.font = "10px Verdana";
 
-        for (var i = 0; i < objectDesc.length; i++) {
-            ctx.beginPath();
-            ctx.strokeStyle = "black";
-            ctx.lineWidth = 1;
-            ctx.fillText(objectDesc[i].Name, objectDesc[i].X + objectDesc[i].Width / 2, objectDesc[i].Y + objectDesc[i].Height / 2);
-            ctx.fillText("Confidence: " + objectDesc[i].Confidence, objectDesc[i].X + objectDesc[i].Width / 2, 10 + objectDesc[i].Y + objectDesc[i].Height / 2);
-        }
+        for (var i = 0; i < objectDesc.length; i++) {
+            const obj = objectDesc[i];
 
-        for (var i = 0; i < objectDesc.length; i++) {
-            ctx.fillStyle = getColor();
-            ctx.globalAlpha = 0.2;
-            ctx.fillRect(objectDesc[i].X, objectDesc[i].Y, objectDesc[i].Width, objectDesc[i].Height);
-            ctx.lineWidth = 3;
-            ctx.strokeStyle = "blue";
-            ctx.rect(objectDesc[i].X, objectDesc[i].Y, objectDesc[i].Width, objectDesc[i].Height);
-            ctx.fillStyle = "black";
-            ctx.fillText("Color: " + getColor(), objectDesc[i].X + objectDesc[i].Width / 2, 20 + objectDesc[i].Y + objectDesc[i].Height / 2);
+            // Draw label and confidence
+            ctx.beginPath();
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 1;
+            ctx.fillText(obj.Name, obj.X + obj.Width / 2, obj.Y + obj.Height / 2);
+            ctx.fillText("Confidence: " + obj.Confidence, obj.X + obj.Width / 2, 10 + obj.Y + obj.Height / 2);
+        }
 
-            ctx.stroke();
-        }
+        for (var i = 0; i < objectDesc.length; i++) {
+            const obj = objectDesc[i];
 
-        ctx.drawImage(img, 0, 0);
+            ctx.fillStyle = getColor();
+            ctx.globalAlpha = 0.2;
+            ctx.fillRect(obj.X, obj.Y, obj.Width, obj.Height);
 
+            ctx.globalAlpha = 1.0;
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "blue";
+            ctx.strokeRect(obj.X, obj.Y, obj.Width, obj.Height);
 
-        console.log('got these object descriptions:');
-        console.log(objectDescriptions);
+            ctx.fillStyle = "black";
+            ctx.fillText("Color: " + getColor(), obj.X + obj.Width / 2, 20 + obj.Y + obj.Height / 2);
+        }
 
-    }
+        g.drawImage(img, 0, 0);
+
+        console.log('Bounding boxes:', objectDesc);
+    }
 </script>
+
