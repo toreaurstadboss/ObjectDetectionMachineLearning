@@ -65,7 +65,7 @@
             return;
         }
 
-        var objectDesc = objectDescriptions; //no need to parse js object again here, since it is already Js object (JSON.parse call is now removed)
+        var objectDesc = JSON.parse(objectDescriptions); //no need to parse js object again here, since it is already Js object (JSON.parse call is now removed)
         //alert('calling load bounding boxes, starting analysis on clientside js : ' + objectDescriptions);
 
         rescaleCanvas();
