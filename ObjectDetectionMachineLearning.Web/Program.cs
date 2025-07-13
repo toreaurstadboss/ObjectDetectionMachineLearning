@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.Features;
 using ObjectDetectionMachineLearning.Web.Components;
 
 namespace ObjectDetectionMachineLearning.Web
@@ -11,6 +12,13 @@ namespace ObjectDetectionMachineLearning.Web
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+            // allow max 10 mb image uploads
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 10 * 1024 * 1024; // 10 MB
+            });
+
 
             var app = builder.Build();
 
