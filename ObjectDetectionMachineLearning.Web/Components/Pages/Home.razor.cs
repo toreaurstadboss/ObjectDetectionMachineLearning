@@ -1,9 +1,15 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
+using System.Text;
+using System.Text.Json;
 
 namespace ObjectDetectionMachineLearning.Web.Components.Pages
 {
     partial class Home
     {
+
+        [Inject]
+        private HttpClient Http { get; set; } = default!;
 
         private string? UploadedImagePreview;
 
@@ -27,6 +33,9 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
                 await previewStream.CopyToAsync(ms);
                 var bytes = ms.ToArray();
                 UploadedImagePreview = $"data:{file.ContentType};base64,{Convert.ToBase64String(bytes)}";
+
+                string? prediction = await CallPredictApiAsync(savedUploadedImageFullPath);
+                Console.WriteLine($"Prediction {prediction}");
             }
         }
 
@@ -46,5 +55,34 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
 
             return filePath;
         }
+
+        private async Task<string?> CallPredictApiAsync(string imagePath)
+        {
+            try
+            {
+                var payload = new { imagePath = imagePath };
+                var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+
+                var response = await Http.PostAsync("https://localhost:65194/predict", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine("Prediction result: " + result);
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine($"API call failed: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error calling API: " + ex.Message);
+            }
+
+            return null;
+        }
+
     }
 }

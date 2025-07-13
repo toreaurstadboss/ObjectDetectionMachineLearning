@@ -7,6 +7,8 @@ using Microsoft.ML.Data;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
+using StopSignDetection_WebApi1;
+using Microsoft.AspNetCore.Mvc;
 
 // Configure app
 var builder = WebApplication.CreateBuilder(args);
@@ -35,16 +37,13 @@ if (app.Environment.IsDevelopment())
 
 // Define prediction route & handler
 app.MapPost("/predict",
-    async (PredictionEnginePool<StopSignDetection.ModelInput, StopSignDetection.ModelOutput> predictionEnginePool, string imagePath) =>
+    async (PredictionEnginePool<StopSignDetection.ModelInput, StopSignDetection.ModelOutput> predictionEnginePool, [FromBody] PredictRequest request) =>
     {
-        //TODO: Write the images uploaded so the API can load it up
-
-        var image = MLImage.CreateFromFile(imagePath);
+        var image = MLImage.CreateFromFile(request.ImagePath);
         var input = new StopSignDetection.ModelInput()
         {
-            Image = image,
+            Image = image
         };
-
         return await Task.FromResult(predictionEnginePool.Predict(input));
     });
 

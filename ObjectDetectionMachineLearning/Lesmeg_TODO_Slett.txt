@@ -1,0 +1,3 @@
+Delete this project, it is not used anymore.
+
+ObjectDetectionMachineLearning.Web is the new project that replaces this one.
