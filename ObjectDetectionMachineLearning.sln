@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectDetectionMachineLearn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopSignDetection_WebApi1", "StopSignDetectionAPI\StopSignDetection_WebApi1.csproj", "{2F4DF6EF-35C4-1B08-A04B-BB8B974531D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectDetectionMachineLearning.Web", "..\ObjectDetectionMachineLearning.Web\ObjectDetectionMachineLearning.Web.csproj", "{2C67730A-A19B-4826-A622-54034C8CFB6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F4DF6EF-35C4-1B08-A04B-BB8B974531D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F4DF6EF-35C4-1B08-A04B-BB8B974531D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F4DF6EF-35C4-1B08-A04B-BB8B974531D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C67730A-A19B-4826-A622-54034C8CFB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C67730A-A19B-4826-A622-54034C8CFB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C67730A-A19B-4826-A622-54034C8CFB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C67730A-A19B-4826-A622-54034C8CFB6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
