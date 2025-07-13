@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.JSInterop;
+using ObjectDetectionMachineLearning.Web.Models;
 using System.Text;
 using System.Text.Json;
 
@@ -10,6 +12,9 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
 
         [Inject]
         private HttpClient Http { get; set; } = default!;
+
+        [Inject]
+        private IJSRuntime JsRunTime { get; set; } = default!;
 
         private string? UploadedImagePreview;
 
@@ -35,9 +40,58 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
                 UploadedImagePreview = $"data:{file.ContentType};base64,{Convert.ToBase64String(bytes)}";
 
                 string? prediction = await CallPredictApiAsync(savedUploadedImageFullPath);
+
+                var jsonBboxes = CreateBoundingBoxJson(prediction);
+                await JsRunTime.InvokeVoidAsync("LoadBoundingBoxes", jsonBboxes);
+
                 Console.WriteLine($"Prediction {prediction}");
             }
         }
+
+        private string CreateBoundingBoxJson(string? prediction)
+        {
+            if (string.IsNullOrEmpty(prediction))
+                return "[]";
+            try
+            {
+                var mlPrediction = JsonSerializer.Deserialize<MLPrediction>(prediction);
+                return ConvertMLPredictionToBoundingBoxJson(mlPrediction!);
+            }
+            catch (JsonException ex)
+            {
+                Console.WriteLine($"Error deserializing prediction: {ex.Message}");
+                return "[]";
+            }
+
+        }
+
+
+        public static string ConvertMLPredictionToBoundingBoxJson(MLPrediction prediction)
+        {
+            if (prediction.predictedBoundingBoxes == null || prediction.predictedBoundingBoxes.Count != 4)
+                return "[]";
+
+            float x1 = prediction.predictedBoundingBoxes[0];
+            float y1 = prediction.predictedBoundingBoxes[1];
+            float x2 = prediction.predictedBoundingBoxes[2];
+            float y2 = prediction.predictedBoundingBoxes[3];
+
+            float width = x2 - x1;
+            float height = y2 - y1;
+
+            var obj = new
+            {
+                Name = prediction.predictedLabel?.FirstOrDefault() ?? "Unknown",
+                X = x1,
+                Y = y1,
+                Width = width,
+                Height = height,
+                Confidence = prediction.score?.FirstOrDefault().ToString("0.0000") ?? "0.0000"
+            };
+
+            return JsonSerializer.Serialize(new[] { obj }, new JsonSerializerOptions { WriteIndented = true });
+        }
+
 
         private static async Task<string> SaveUploadedImage(IBrowserFile file)
         {
