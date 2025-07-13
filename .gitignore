@@ -482,4 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-/ObjectDetectionMachineLearning.Web/UploadedImages/cbdc1e5f-5c8e-4809-a4ce-cc042e0c3fdb_stevo-FIaR_f_U35k-unsplash.jpg
+
+# Uploaded images
+/ObjectDetectionMachineLearning.Web/UploadedImages

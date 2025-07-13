@@ -19,7 +19,7 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
 
             if (file != null && (file.ContentType == "image/jpeg" || file.ContentType == "image/png"))
             {
-                await SaveUploadedImage(file);
+                string savedUploadedImageFullPath = await SaveUploadedImage(file);
 
                 // Optional: Set preview if you still want to show it in the UI
                 using var ms = new MemoryStream();
@@ -30,7 +30,7 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
             }
         }
 
-        private static async Task SaveUploadedImage(IBrowserFile file)
+        private static async Task<string> SaveUploadedImage(IBrowserFile file)
         {
             var uploadsFolder = Path.Combine(Environment.CurrentDirectory, "UploadedImages");
             Directory.CreateDirectory(uploadsFolder); // Ensure folder exists
@@ -43,6 +43,8 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
             {
                 await stream.CopyToAsync(fileStream);
             }
+
+            return filePath;
         }
     }
 }
