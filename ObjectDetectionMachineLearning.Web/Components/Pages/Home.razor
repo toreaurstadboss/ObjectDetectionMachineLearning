@@ -4,40 +4,6 @@
 
 <h1>Object detection using Machine learning</h1>
 
-<p>
-    Upload an image to use the Object detection demo. The machine-learned ML.Net model will detect <em>Stop signs</em> and
-    display bounding boxes around each stop sign in the image. The stop sign is trained to use those used as traffic signs in United States
-    along streets and roads.
-</p>
-
-<div class="container">
-
-    <div class="row align-items-start">
-        <div class="col">
-            <label><b>Select a picture to run stop sign object detection</b></label><br />
-            <InputFile OnChange="@OnInputFile" accept=".jpeg,.jpg,.png" />
-            <br />
-            <code class="alert-secondary">Supported file formats: .jpeg, .jpg and .png. Max image file upload size : 10 MB</code>
-            <br />
-        </div>
-    </div>
-
-    <div class="row align-items-start">
-        <div class="col overflow-scroll">
-            <label class="alert-info">Preview of the selected image</label>
-            <div>
-                <img id="PreviewImage" style="border:1px solid black;" src="@UploadedImagePreview" /><br />
-            </div>
-        </div>
-        <div class="col overflow-scroll">
-            <label class="alert-info">Image with bounding boxes</label>
-            <canvas height="400" id="PreviewImageBbox" style="border:solid 1px black">
-            </canvas>
-            <br />
-        </div>
-    </div>
-
-</div>
 
 <script type="text/javascript">
   
@@ -156,13 +122,18 @@ function LoadBoundingBoxes(objectDescriptions) {
         ctx.drawImage(img, 0, 0);
 
         ctx.font = "10px Verdana";
+        ctx.shadowColor = "black";
+        ctx.shadowBlur = 5;
 
         for (var i = 0; i < objectDesc.length; i++) {
             const obj = objectDesc[i];
 
             // Draw label and confidence
             ctx.beginPath();
-            ctx.strokeStyle = "black";
+            ctx.strokeStyle = "white";
+
+            ctx.fillStyle = "white";
+            
             ctx.lineWidth = 1;
             ctx.fillText(obj.Name, obj.X + obj.Width / 2, obj.Y + obj.Height / 2);
             ctx.fillText("Confidence: " + obj.Confidence, obj.X + obj.Width / 2, 10 + obj.Y + obj.Height / 2);
@@ -180,7 +151,7 @@ function LoadBoundingBoxes(objectDescriptions) {
             ctx.strokeStyle = "blue";
             ctx.strokeRect(obj.X, obj.Y, obj.Width, obj.Height);
 
-            ctx.fillStyle = "black";
+            ctx.fillStyle = "white";
             ctx.fillText("Color: " + getColor(), obj.X + obj.Width / 2, 20 + obj.Y + obj.Height / 2);
         }
 
@@ -189,4 +160,40 @@ function LoadBoundingBoxes(objectDescriptions) {
         console.log('Bounding boxes:', objectDesc);
     }
 </script>
+
+<p>
+    Upload an image to use the Object detection demo. The machine-learned ML.Net model will detect <em>Stop signs</em> and
+    display bounding boxes around each stop sign in the image. The stop sign is trained to use those used as traffic signs in United States
+    along streets and roads.
+</p>
+
+<div class="container">
+
+    <div class="row align-items-start">
+        <div class="col">
+            <label><b>Select a picture to run stop sign object detection</b></label><br />
+            <InputFile OnChange="@OnInputFile" accept=".jpeg,.jpg,.png" />
+            <br />
+            <code class="alert-secondary">Supported file formats: .jpeg, .jpg and .png. Max image file upload size : 10 MB</code>
+            <br />
+        </div>
+    </div>
+
+    <div class="row align-items-start">
+        <div class="col overflow-scroll">
+            <label class="alert-info">Preview of the selected image</label>
+            <div>
+                <img id="PreviewImage" style="border:1px solid black;" src="@UploadedImagePreview" /><br />
+            </div>
+        </div>
+        <div class="col overflow-scroll">
+            <label class="alert-info">Image with bounding boxes</label>
+            <canvas height="400" id="PreviewImageBbox" style="border:solid 1px black">
+            </canvas>
+            <br />
+        </div>
+    </div>
+
+</div>
+
 

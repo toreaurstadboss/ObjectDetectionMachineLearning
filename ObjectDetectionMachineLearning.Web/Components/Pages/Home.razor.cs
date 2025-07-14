@@ -45,6 +45,8 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
                 await JsRunTime.InvokeVoidAsync("LoadBoundingBoxes", jsonBboxes);
 
                 Console.WriteLine($"Prediction {prediction}");
+
+                StateHasChanged();
             }
         }
 
