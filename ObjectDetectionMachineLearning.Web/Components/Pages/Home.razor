@@ -26,12 +26,12 @@
         <div class="col overflow-scroll">
             <label class="alert-info">Preview of the selected image</label>
             <div>
-                <img id="PreviewImage" width="400" style="border:1px solid black;" src="@UploadedImagePreview" /><br />
+                <img id="PreviewImage" style="border:1px solid black;" src="@UploadedImagePreview" /><br />
             </div>
         </div>
         <div class="col overflow-scroll">
             <label class="alert-info">Image with bounding boxes</label>
-            <canvas id="PreviewImageBbox" style="border:solid 1px black">
+            <canvas height="400" id="PreviewImageBbox" style="border:solid 1px black">
             </canvas>
             <br />
         </div>
@@ -85,6 +85,8 @@ function LoadBoundingBoxes(objectDescriptions) {
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     ctx.font = "10px Verdana";
+
+    console.log(`ctx.drawImage Canvas width: ${canvas.width} Canvas height: ${canvas.height} ScaleX ${scaleX} ScaleY ${scaleY}`);
 
     for (var i = 0; i < objectDesc.length; i++) {
         const obj = objectDesc[i];
@@ -182,7 +184,7 @@ function LoadBoundingBoxes(objectDescriptions) {
             ctx.fillText("Color: " + getColor(), obj.X + obj.Width / 2, 20 + obj.Y + obj.Height / 2);
         }
 
-        g.drawImage(img, 0, 0);
+        //ctx.drawImage(img, 0, 0);
 
         console.log('Bounding boxes:', objectDesc);
     }
