@@ -11,7 +11,10 @@ namespace ObjectDetectionMachineLearning.Web
 
             // Add services to the container.
             builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents();
+                .AddInteractiveServerComponents(options =>
+                {
+                    options.DetailedErrors = true; //expose Js clientside errors for now (only use this in Development)
+                });         
 
             // allow max 10 mb image uploads
             builder.Services.Configure<FormOptions>(options =>

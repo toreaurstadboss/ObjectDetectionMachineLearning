@@ -40,11 +40,42 @@ app.MapPost("/predict",
     async (PredictionEnginePool<StopSignDetection.ModelInput, StopSignDetection.ModelOutput> predictionEnginePool, [FromBody] PredictRequest request) =>
     {
         var image = MLImage.CreateFromFile(request.ImagePath);
+
         var input = new StopSignDetection.ModelInput()
         {
-            Image = image
+            Image = image,
         };
-        return await Task.FromResult(predictionEnginePool.Predict(input));
+
+
+        // Get original image dimensions
+        int originalWidth = image.Width;
+        int originalHeight = image.Height;
+
+        const int virtualWidth = 800;
+        const int virtualHeight = 600;
+
+        var prediction = predictionEnginePool.Predict(input);
+        var boxes = prediction.PredictedBoundingBoxes;
+
+        for (int i = 0; i < boxes.Length; i += 4)
+        {
+            float left = boxes[i];
+            float top = boxes[i + 1];
+            float width = boxes[i + 2];
+            float height = boxes[i + 3];
+
+            // Scale to original image size
+            float scaledLeft = left * originalWidth / virtualWidth;
+            float scaledTop = top * originalHeight / virtualHeight;
+            float scaledWidth = width * originalWidth / virtualWidth;
+            float scaledHeight = height * originalHeight / virtualHeight;
+
+            Console.WriteLine($"Box {i / 4}: X={scaledLeft}, Y={scaledTop}, Width={scaledWidth}, Height={scaledHeight}");
+
+            (boxes[i], boxes[i + 1], boxes[i + 2], boxes[i + 3]) = (scaledLeft, scaledTop, scaledWidth, scaledHeight);  
+        }
+
+        return await Task.FromResult(prediction);
     });
 
 // Run app
