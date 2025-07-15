@@ -18,6 +18,8 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
 
         private string? UploadedImagePreview;
 
+        private MLPrediction LatestPrediction = default!;
+
         /// <summary>
         /// Uploads an image and sets the imagePreview property to display it
         /// </summary>
@@ -57,6 +59,7 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
             try
             {
                 var mlPrediction = JsonSerializer.Deserialize<MLPrediction>(prediction);
+                LatestPrediction = mlPrediction;
                 return ConvertMLPredictionToBoundingBoxJson(mlPrediction!);
             }
             catch (JsonException ex)
