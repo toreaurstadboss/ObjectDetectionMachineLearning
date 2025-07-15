@@ -67,33 +67,40 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
 
         }
 
-
         public static string ConvertMLPredictionToBoundingBoxJson(MLPrediction prediction)
         {
-            if (prediction.predictedBoundingBoxes == null || prediction.predictedBoundingBoxes.Count != 4)
+            var boxes = prediction.predictedBoundingBoxes;
+            var labels = prediction.predictedLabel ?? new List<string>();
+            var scores = prediction.score ?? new List<float>();
+
+            if (boxes == null || boxes.Count % 4 != 0)
                 return "[]";
 
-            float x1 = prediction.predictedBoundingBoxes[0];
-            float y1 = prediction.predictedBoundingBoxes[1];
-            float x2 = prediction.predictedBoundingBoxes[2];
-            float y2 = prediction.predictedBoundingBoxes[3];
+            var results = new List<object>();
 
-            float width = x2 - x1;
-            float height = y2 - y1;
-
-            var obj = new
+            for (int i = 0; i < boxes.Count; i += 4)
             {
-                Name = prediction.predictedLabel?.FirstOrDefault() ?? "Unknown",
-                X = x1,
-                Y = y1,
-                Width = width,
-                Height = height,
-                Confidence = prediction.score?.FirstOrDefault().ToString("0.0000") ?? "0.0000"
-            };
+                float x1 = boxes[i];
+                float y1 = boxes[i + 1];
+                float x2 = boxes[i + 2];
+                float y2 = boxes[i + 3];
 
-            return JsonSerializer.Serialize(new[] { obj }, new JsonSerializerOptions { WriteIndented = true });
+                float width = x2 - x1;
+                float height = y2 - y1;
+
+                results.Add(new
+                {
+                    Name = i / 4 < labels.Count ? labels[i / 4] : "Unknown",
+                    X = x1,
+                    Y = y1,
+                    Width = width,
+                    Height = height,
+                    Confidence = i / 4 < scores.Count ? scores[i / 4].ToString("0.0000") : "0.0000"
+                });
+            }
+
+            return JsonSerializer.Serialize(results, new JsonSerializerOptions { WriteIndented = true });
         }
-
 
         private static async Task<string> SaveUploadedImage(IBrowserFile file)
         {

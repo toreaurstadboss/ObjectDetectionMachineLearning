@@ -37,8 +37,13 @@ if (app.Environment.IsDevelopment())
 
 // Define prediction route & handler
 app.MapPost("/predict",
-    async (PredictionEnginePool<StopSignDetection.ModelInput, StopSignDetection.ModelOutput> predictionEnginePool, [FromBody] PredictRequest request) =>
+    async (HttpContext context, PredictionEnginePool<StopSignDetection.ModelInput, StopSignDetection.ModelOutput> predictionEnginePool, [FromBody] PredictRequest request) =>
     {
+        // Disable caching
+        context.Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
+        context.Response.Headers["Pragma"] = "no-cache";
+        context.Response.Headers["Expires"] = "0";
+
         var image = MLImage.CreateFromFile(request.ImagePath);
 
         var input = new StopSignDetection.ModelInput()
