@@ -44,11 +44,11 @@ namespace ObjectDetectionMachineLearning.Web.Components.Pages
                 string? prediction = await CallPredictApiAsync(savedUploadedImageFullPath);
 
                 var jsonBboxes = CreateBoundingBoxJson(prediction);
-                await JsRunTime.InvokeVoidAsync("LoadBoundingBoxes", jsonBboxes);
+                await JsRunTime.InvokeVoidAsync("InitLoadBoundingBoxes", jsonBboxes);
 
                 Console.WriteLine($"Prediction {prediction}");
 
-                StateHasChanged();
+                //StateHasChanged();
             }
         }
 

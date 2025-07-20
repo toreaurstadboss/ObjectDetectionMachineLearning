@@ -93,6 +93,23 @@ function getColor() {
     return colorPalette[colorIndex];
 }
 
+
+function InitLoadBoundingBoxes(objectDescriptions) {
+    const img = document.getElementById('PreviewImage');
+
+    const draw = () => {
+        setTimeout(() => {
+            LoadBoundingBoxes(objectDescriptions);
+        }, 1000); // 100ms delay
+    };
+
+    if (!img.complete) {
+        img.onload = draw;
+    } else {
+        draw();
+    }
+}
+
 function LoadBoundingBoxes(objectDescriptions) {
     if (!objectDescriptions) {
         alert('No objects found in image.');
