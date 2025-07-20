@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "ce49192a3f3ecdfebcd4173724e0e91d",
+        "name": "ajda-atz-HEKgHLpNgGk-unsplash.jpg",
+        "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/ajda-atz-HEKgHLpNgGk-unsplash.jpg",
+        "size": {
+            "width": 3553,
+            "height": 4737
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "FuPPQRauFI",
+            "type": "RECTANGLE",
+            "tags": [
+                "Stop-Sign"
+            ],
+            "boundingBox": {
+                "height": 125.76106194690266,
+                "width": 160.1137339055794,
+                "left": 3273.4561929989272,
+                "top": 2995.399839098954
+            },
+            "points": [
+                {
+                    "x": 3273.4561929989272,
+                    "y": 2995.399839098954
+                },
+                {
+                    "x": 3433.5699269045062,
+                    "y": 2995.399839098954
+                },
+                {
+                    "x": 3433.5699269045062,
+                    "y": 3121.160901045857
+                },
+                {
+                    "x": 3273.4561929989272,
+                    "y": 3121.160901045857
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

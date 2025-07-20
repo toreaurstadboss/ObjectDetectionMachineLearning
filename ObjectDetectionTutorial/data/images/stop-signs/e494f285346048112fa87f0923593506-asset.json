@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "e494f285346048112fa87f0923593506",
+        "name": "andrii-leonov-W_rQAwVRPgg-unsplash.jpg",
+        "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/andrii-leonov-W_rQAwVRPgg-unsplash.jpg",
+        "size": {
+            "width": 2917,
+            "height": 3890
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "4uf5VUM2z2",
+            "type": "RECTANGLE",
+            "tags": [
+                "Stop-Sign"
+            ],
+            "boundingBox": {
+                "height": 1452.0997586484311,
+                "width": 1502.3175965665234,
+                "left": 771.6493931062231,
+                "top": 1367.6025744167337
+            },
+            "points": [
+                {
+                    "x": 771.6493931062231,
+                    "y": 1367.6025744167337
+                },
+                {
+                    "x": 2273.9669896727464,
+                    "y": 1367.6025744167337
+                },
+                {
+                    "x": 2273.9669896727464,
+                    "y": 2819.702333065165
+                },
+                {
+                    "x": 771.6493931062231,
+                    "y": 2819.702333065165
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

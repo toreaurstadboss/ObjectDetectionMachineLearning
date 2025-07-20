@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "30b127465cd1194984f863ec19b2f169",
+        "name": "brantley-neal-_CAvB1vYIlY-unsplash.jpg",
+        "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/brantley-neal-_CAvB1vYIlY-unsplash.jpg",
+        "size": {
+            "width": 2603,
+            "height": 3904
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "l3rK0X8yJ-",
+            "type": "RECTANGLE",
+            "tags": [
+                "Stop-Sign"
+            ],
+            "boundingBox": {
+                "height": 226.1367658889783,
+                "width": 207.23522316043426,
+                "left": 1183.4092845295536,
+                "top": 1133.8246178600161
+            },
+            "points": [
+                {
+                    "x": 1183.4092845295536,
+                    "y": 1133.8246178600161
+                },
+                {
+                    "x": 1390.644507689988,
+                    "y": 1133.8246178600161
+                },
+                {
+                    "x": 1390.644507689988,
+                    "y": 1359.9613837489944
+                },
+                {
+                    "x": 1183.4092845295536,
+                    "y": 1359.9613837489944
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

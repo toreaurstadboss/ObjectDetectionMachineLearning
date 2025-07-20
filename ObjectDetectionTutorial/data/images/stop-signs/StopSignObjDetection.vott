@@ -1,0 +1,647 @@
+{
+    "name": "StopSignObjDetection",
+    "securityToken": "StopSignObjDetection Token",
+    "sourceConnection": {
+        "name": "StopSignImages",
+        "description": "Collection of 50 training images retrieved from Unsplash",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYzg4NGEzMzdlMTM3MDY1ZDEwOGJjYTBkYmYxOTgwNzBjZGFhMGQxMjA3NTIyY2MzNzZlMTIzMmEyZjM5MGJmODJhYjQxOTc2MTAxNDU1NWYyODFlMzIzYTkzY2Q4NmM5OWNiNWYwNDY1MjU4NWQ3YTRlMDQ4ZjQ4MmQ3ZTdlMzc0NjkyYjUzNjVlMjlkZDJkOTdhNzhjNzI1ZDI3NTNiMzBjYjE1NjAxZDliYjA1ZDhjMTk1YmE2ZjhlZDVjYmVhIiwiaXYiOiI5OGQzNmJlZWJjMWZlYjc2MzE4YzA3MTNjMmFmOGIzMmI4MzQxOTI1NWFjMmNmYTYifQ=="
+        },
+        "id": "AyfFvDAoK2"
+    },
+    "targetConnection": {
+        "name": "StopSignImages",
+        "description": "Collection of 50 training images retrieved from Unsplash",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNDRiN2VjOWZkOGQ0ZjIwMGNlMWYxYTYyNzhhNzQ4NDZkMTY0ZmRmMzZkZjkzMmVjMTI0ODE2NGFkZmZmZWE3MGQ2YWM2OWUyZjY5MjEwNmEyOGJiYjBlMTVmYWMzODFiNDE1NzQ0ODM3M2MxNjRiY2YwZjI2YTBmYzA1OTc4MzY2NDVmNzAzNmE1NzY2ZWZlMGQ1OGJmOWVkMWMxMjhiZmE1MjMwNGY4YjM1MGM3NGM0YzM5OWRmZjdkNzA0MjgzIiwiaXYiOiIzM2ZhM2E2OGIxODM4ODJiM2NiNDg3YTE1MDJhZWFlNmM0Y2U2MWNmYThhOWQzMmMifQ=="
+        },
+        "id": "AyfFvDAoK2"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "Stop-Sign",
+            "color": "#5db300"
+        }
+    ],
+    "id": "UA6Q4j_Fc4",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "vottJson",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZjRkMGQyM2JiMzAyMDZmNTZkOGJhMmJiMzMyOGRiNmRjNTU5MjlhMDY2ZmM2YTNjODJiNWEyMWM4OGI5Y2Q4MTg2N2Y2MGExYTcyMjI3NmFjNjY2YWQ0OGViYjg4ZjAwIiwiaXYiOiJjNzMzM2RiNmI1ZGVmMTQ2YjA2MjA0YzA5NmYzNGQzOTU3ZmUzZTk1NjQ3ODQ5MTUifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "03fbcaeffd63a583be58cdeb5b59d43d",
+    "assets": {
+        "ce49192a3f3ecdfebcd4173724e0e91d": {
+            "format": "jpg",
+            "id": "ce49192a3f3ecdfebcd4173724e0e91d",
+            "name": "ajda-atz-HEKgHLpNgGk-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/ajda-atz-HEKgHLpNgGk-unsplash.jpg",
+            "size": {
+                "width": 3553,
+                "height": 4737
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ea19309bbae1708f7b1f6360b735ff6d": {
+            "format": "jpg",
+            "id": "ea19309bbae1708f7b1f6360b735ff6d",
+            "name": "alexandre-lecocq-ndBWgMLw6Bc-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/alexandre-lecocq-ndBWgMLw6Bc-unsplash.jpg",
+            "size": {
+                "width": 4309,
+                "height": 2426
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e494f285346048112fa87f0923593506": {
+            "format": "jpg",
+            "id": "e494f285346048112fa87f0923593506",
+            "name": "andrii-leonov-W_rQAwVRPgg-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/andrii-leonov-W_rQAwVRPgg-unsplash.jpg",
+            "size": {
+                "width": 2917,
+                "height": 3890
+            },
+            "state": 2,
+            "type": 1
+        },
+        "539754a9be4b7609db1774d84137332b": {
+            "format": "jpg",
+            "id": "539754a9be4b7609db1774d84137332b",
+            "name": "anton-mishin-_AR3i6Gck0Q-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/anton-mishin-_AR3i6Gck0Q-unsplash.jpg",
+            "size": {
+                "width": 3008,
+                "height": 2000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f3fb18cf241c782f7d509997b4ef6a03": {
+            "format": "jpg",
+            "id": "f3fb18cf241c782f7d509997b4ef6a03",
+            "name": "arthur-osipyan-vLusIJAYy_Q-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/arthur-osipyan-vLusIJAYy_Q-unsplash.jpg",
+            "size": {
+                "width": 2738,
+                "height": 1825
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0def296312d4c98860076c8269ab456e": {
+            "format": "jpg",
+            "id": "0def296312d4c98860076c8269ab456e",
+            "name": "ben-mater-YO3iFGBN6TU-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/ben-mater-YO3iFGBN6TU-unsplash.jpg",
+            "size": {
+                "width": 5472,
+                "height": 3648
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3861a67e8c7ce1c58aa400bf3e1ea94a": {
+            "format": "jpg",
+            "id": "3861a67e8c7ce1c58aa400bf3e1ea94a",
+            "name": "bogomil-mihaylov-OHxTNeAtNRs-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/bogomil-mihaylov-OHxTNeAtNRs-unsplash.jpg",
+            "size": {
+                "width": 3456,
+                "height": 5184
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b2d9880800580e88e5ba525e9cc53592": {
+            "format": "jpg",
+            "id": "b2d9880800580e88e5ba525e9cc53592",
+            "name": "branden-tate-XgEHOPn7h_E-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/branden-tate-XgEHOPn7h_E-unsplash.jpg",
+            "size": {
+                "width": 5184,
+                "height": 3456
+            },
+            "state": 2,
+            "type": 1
+        },
+        "30b127465cd1194984f863ec19b2f169": {
+            "format": "jpg",
+            "id": "30b127465cd1194984f863ec19b2f169",
+            "name": "brantley-neal-_CAvB1vYIlY-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/brantley-neal-_CAvB1vYIlY-unsplash.jpg",
+            "size": {
+                "width": 2603,
+                "height": 3904
+            },
+            "state": 2,
+            "type": 1
+        },
+        "73deb75cffc4420f6341656bb5925223": {
+            "format": "jpg",
+            "id": "73deb75cffc4420f6341656bb5925223",
+            "name": "chris-bair-PJLDC3tA0Sc-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/chris-bair-PJLDC3tA0Sc-unsplash.jpg",
+            "size": {
+                "width": 5184,
+                "height": 3888
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8ae8de9962604de4ecc56bda591682f6": {
+            "format": "jpg",
+            "id": "8ae8de9962604de4ecc56bda591682f6",
+            "name": "chris-benson-h0UG2Bd_Few-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/chris-benson-h0UG2Bd_Few-unsplash.jpg",
+            "size": {
+                "width": 4096,
+                "height": 2303
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e96cf2a3dada7c4dc6524fc9880ec7da": {
+            "format": "jpg",
+            "id": "e96cf2a3dada7c4dc6524fc9880ec7da",
+            "name": "david-preston--t7S0WPRr4E-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/david-preston--t7S0WPRr4E-unsplash.jpg",
+            "size": {
+                "width": 2705,
+                "height": 3500
+            },
+            "state": 2,
+            "type": 1
+        },
+        "29ed75cea8033f3058bb5fef3838850f": {
+            "format": "jpg",
+            "id": "29ed75cea8033f3058bb5fef3838850f",
+            "name": "diego-lozano-AmZC7bCrsko-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/diego-lozano-AmZC7bCrsko-unsplash.jpg",
+            "size": {
+                "width": 6000,
+                "height": 4000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "305afd17c515dc21d1248b77f238e21d": {
+            "format": "jpg",
+            "id": "305afd17c515dc21d1248b77f238e21d",
+            "name": "david-preston-mW2NETqR49A-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/david-preston-mW2NETqR49A-unsplash.jpg",
+            "size": {
+                "width": 3500,
+                "height": 2500
+            },
+            "state": 2,
+            "type": 1
+        },
+        "154315d136868aa8139667ba4291cfb3": {
+            "format": "jpg",
+            "id": "154315d136868aa8139667ba4291cfb3",
+            "name": "doyoun-seo-Xe1S9aq2fqg-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/doyoun-seo-Xe1S9aq2fqg-unsplash.jpg",
+            "size": {
+                "width": 2823,
+                "height": 2823
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c342dbd6e18194051c543451d113f3a9": {
+            "format": "jpg",
+            "id": "c342dbd6e18194051c543451d113f3a9",
+            "name": "eilis-garvey-rb_PpjzWKnU-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/eilis-garvey-rb_PpjzWKnU-unsplash.jpg",
+            "size": {
+                "width": 4912,
+                "height": 3264
+            },
+            "state": 2,
+            "type": 1
+        },
+        "bc0234eea3c5ccd67c7acd73c7c8e9ae": {
+            "format": "jpg",
+            "id": "bc0234eea3c5ccd67c7acd73c7c8e9ae",
+            "name": "emiel-van-betsbrugge-rogwZG1NfII-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/emiel-van-betsbrugge-rogwZG1NfII-unsplash.jpg",
+            "size": {
+                "width": 2647,
+                "height": 2647
+            },
+            "state": 2,
+            "type": 1
+        },
+        "bf00c881eb3a5c08d4bdbd26a4b8dcd0": {
+            "format": "jpg",
+            "id": "bf00c881eb3a5c08d4bdbd26a4b8dcd0",
+            "name": "free-to-use-sounds-Vkt3uDeDkdg-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/free-to-use-sounds-Vkt3uDeDkdg-unsplash.jpg",
+            "size": {
+                "width": 2832,
+                "height": 4240
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5655eb022c498353412ac8e8a49dcbe9": {
+            "format": "jpg",
+            "id": "5655eb022c498353412ac8e8a49dcbe9",
+            "name": "giorgio-trovato-7PUrk4B18tY-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/giorgio-trovato-7PUrk4B18tY-unsplash.jpg",
+            "size": {
+                "width": 5596,
+                "height": 3731
+            },
+            "state": 2,
+            "type": 1
+        },
+        "98b1278d7e1b07673b6669a86b80af69": {
+            "format": "jpg",
+            "id": "98b1278d7e1b07673b6669a86b80af69",
+            "name": "jad-limcaco-Y_J0phaFy2g-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/jad-limcaco-Y_J0phaFy2g-unsplash.jpg",
+            "size": {
+                "width": 4895,
+                "height": 2992
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3caccd7409c67f46acce2dfef0aa95ed": {
+            "format": "jpg",
+            "id": "3caccd7409c67f46acce2dfef0aa95ed",
+            "name": "joel-mott-9r9Ex5iEc5o-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/joel-mott-9r9Ex5iEc5o-unsplash.jpg",
+            "size": {
+                "width": 2533,
+                "height": 3784
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4d92d80dbeb3786c9ea7960aef9d8f92": {
+            "format": "jpg",
+            "id": "4d92d80dbeb3786c9ea7960aef9d8f92",
+            "name": "john-matychuk-dJdcb11aboQ-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/john-matychuk-dJdcb11aboQ-unsplash.jpg",
+            "size": {
+                "width": 5402,
+                "height": 3601
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ab652e6cb71b96a8fd12868c79a29d38": {
+            "format": "jpg",
+            "id": "ab652e6cb71b96a8fd12868c79a29d38",
+            "name": "jon-tyson-1IqQDH6KgdU-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/jon-tyson-1IqQDH6KgdU-unsplash.jpg",
+            "size": {
+                "width": 2918,
+                "height": 3890
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c45daac74505864c34dcab2ed32ce38c": {
+            "format": "jpg",
+            "id": "c45daac74505864c34dcab2ed32ce38c",
+            "name": "jon-tyson-QNp4m7gU7BA-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/jon-tyson-QNp4m7gU7BA-unsplash.jpg",
+            "size": {
+                "width": 2686,
+                "height": 3576
+            },
+            "state": 2,
+            "type": 1
+        },
+        "88782ca91d88b3909c00dd9f47489201": {
+            "format": "jpg",
+            "id": "88782ca91d88b3909c00dd9f47489201",
+            "name": "jose-alonso-fl9kHTSPSvk-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/jose-alonso-fl9kHTSPSvk-unsplash.jpg",
+            "size": {
+                "width": 3024,
+                "height": 4032
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f79a8eb8a90d2dd8ca87d571b3d0f23e": {
+            "format": "jpg",
+            "id": "f79a8eb8a90d2dd8ca87d571b3d0f23e",
+            "name": "josh-wilburne-3Cs4mF7fL3w-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/josh-wilburne-3Cs4mF7fL3w-unsplash.jpg",
+            "size": {
+                "width": 3000,
+                "height": 2000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "09edd9254dbd6a2394af5baf980f30da": {
+            "format": "jpg",
+            "id": "09edd9254dbd6a2394af5baf980f30da",
+            "name": "joshua-hoehne-WPrTKRw8KRQ-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/joshua-hoehne-WPrTKRw8KRQ-unsplash.jpg",
+            "size": {
+                "width": 4814,
+                "height": 3209
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8b0d0d27ecaa17a2684f4439b0e4d958": {
+            "format": "jpg",
+            "id": "8b0d0d27ecaa17a2684f4439b0e4d958",
+            "name": "juli-kosolapova-DmtblAatFtk-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/juli-kosolapova-DmtblAatFtk-unsplash.jpg",
+            "size": {
+                "width": 4288,
+                "height": 2848
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8c5a1ffb44d14e6603f557847338b438": {
+            "format": "jpg",
+            "id": "8c5a1ffb44d14e6603f557847338b438",
+            "name": "kelly-sikkema-4KzwQGsDRvA-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/kelly-sikkema-4KzwQGsDRvA-unsplash.jpg",
+            "size": {
+                "width": 5568,
+                "height": 3250
+            },
+            "state": 2,
+            "type": 1
+        },
+        "03a3bf2bafab7ce038104a5456b83d41": {
+            "format": "jpg",
+            "id": "03a3bf2bafab7ce038104a5456b83d41",
+            "name": "kevin-lee-dU8dAD8KoOI-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/kevin-lee-dU8dAD8KoOI-unsplash.jpg",
+            "size": {
+                "width": 4000,
+                "height": 6000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1b299dbc5bc942a17df84b498dfc57e5": {
+            "format": "jpg",
+            "id": "1b299dbc5bc942a17df84b498dfc57e5",
+            "name": "kevork-kurdoghlian-eB2YX2TzNIA-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/kevork-kurdoghlian-eB2YX2TzNIA-unsplash.jpg",
+            "size": {
+                "width": 6016,
+                "height": 4000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c51f415ba451a6026f992651ab139056": {
+            "format": "jpg",
+            "id": "c51f415ba451a6026f992651ab139056",
+            "name": "luke-van-zyl-rKSHh6nEG1g-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/luke-van-zyl-rKSHh6nEG1g-unsplash.jpg",
+            "size": {
+                "width": 3376,
+                "height": 6000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "05bb7845c523b4d36994f067283cb53e": {
+            "format": "jpg",
+            "id": "05bb7845c523b4d36994f067283cb53e",
+            "name": "marcos-mathias-Jd7jw1Vf_aI-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/marcos-mathias-Jd7jw1Vf_aI-unsplash.jpg",
+            "size": {
+                "width": 4752,
+                "height": 3168
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6272a53edaf32553c840905f68a9c342": {
+            "format": "jpg",
+            "id": "6272a53edaf32553c840905f68a9c342",
+            "name": "mason-wilkes-q-nm36mpsDw-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/mason-wilkes-q-nm36mpsDw-unsplash.jpg",
+            "size": {
+                "width": 5610,
+                "height": 3740
+            },
+            "state": 2,
+            "type": 1
+        },
+        "cb0786af96f38fc4edf043fc13b2d559": {
+            "format": "jpg",
+            "id": "cb0786af96f38fc4edf043fc13b2d559",
+            "name": "melanie-these-mXIViwsTvIc-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/melanie-these-mXIViwsTvIc-unsplash.jpg",
+            "size": {
+                "width": 3168,
+                "height": 4752
+            },
+            "state": 2,
+            "type": 1
+        },
+        "33600b62dc915313f48ae245c9e31150": {
+            "format": "jpg",
+            "id": "33600b62dc915313f48ae245c9e31150",
+            "name": "naina-vij--j35s3zjPKU-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/naina-vij--j35s3zjPKU-unsplash.jpg",
+            "size": {
+                "width": 3024,
+                "height": 4032
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e953937c2d1b26de0cd9b33a6d47966c": {
+            "format": "jpg",
+            "id": "e953937c2d1b26de0cd9b33a6d47966c",
+            "name": "olivia-connell-Tc9KWrlOL0E-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/olivia-connell-Tc9KWrlOL0E-unsplash.jpg",
+            "size": {
+                "width": 2134,
+                "height": 3000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "22e3f84b0e64f1953a0c722545860252": {
+            "format": "jpg",
+            "id": "22e3f84b0e64f1953a0c722545860252",
+            "name": "pedro-da-silva-unEmGQqdO7Q-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/pedro-da-silva-unEmGQqdO7Q-unsplash.jpg",
+            "size": {
+                "width": 2271,
+                "height": 2271
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b567be87a469fb077052b3a47a23b550": {
+            "format": "jpg",
+            "id": "b567be87a469fb077052b3a47a23b550",
+            "name": "phil-garrison-ezvpHWyqsYg-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/phil-garrison-ezvpHWyqsYg-unsplash.jpg",
+            "size": {
+                "width": 5807,
+                "height": 3263
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ddf6ebae0fcc8058c8992e4491c64d18": {
+            "format": "jpg",
+            "id": "ddf6ebae0fcc8058c8992e4491c64d18",
+            "name": "renan-kamikoga-vxx6ilmR-W4-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/renan-kamikoga-vxx6ilmR-W4-unsplash.jpg",
+            "size": {
+                "width": 3613,
+                "height": 5472
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b4adaeb1cbe8790a085b99e93d973bde": {
+            "format": "jpg",
+            "id": "b4adaeb1cbe8790a085b99e93d973bde",
+            "name": "ron-mcclenny-EpHH_NKwKkE-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/ron-mcclenny-EpHH_NKwKkE-unsplash.jpg",
+            "size": {
+                "width": 5168,
+                "height": 3448
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4dee1cb1f35ba22a25e4787270423998": {
+            "format": "jpg",
+            "id": "4dee1cb1f35ba22a25e4787270423998",
+            "name": "sam-xu-FgY6bF6emj0-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/sam-xu-FgY6bF6emj0-unsplash.jpg",
+            "size": {
+                "width": 4344,
+                "height": 2896
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9db4426166849c514af32a9813b1b1a0": {
+            "format": "jpg",
+            "id": "9db4426166849c514af32a9813b1b1a0",
+            "name": "samuel-sng-Uj5tQyHS2d0-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/samuel-sng-Uj5tQyHS2d0-unsplash.jpg",
+            "size": {
+                "width": 6000,
+                "height": 4000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "04530658b97fe29dbbd63759a7264e46": {
+            "format": "jpg",
+            "id": "04530658b97fe29dbbd63759a7264e46",
+            "name": "sandy-ching-ixLUOtNSSHQ-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/sandy-ching-ixLUOtNSSHQ-unsplash.jpg",
+            "size": {
+                "width": 5304,
+                "height": 7399
+            },
+            "state": 2,
+            "type": 1
+        },
+        "03f70bd91eaefe898224833278cea9d1": {
+            "format": "jpg",
+            "id": "03f70bd91eaefe898224833278cea9d1",
+            "name": "suad-kamardeen-EcQW_Caifz8-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/suad-kamardeen-EcQW_Caifz8-unsplash.jpg",
+            "size": {
+                "width": 6000,
+                "height": 4000
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6371e98e280fa8a5c07da089dac618fa": {
+            "format": "jpg",
+            "id": "6371e98e280fa8a5c07da089dac618fa",
+            "name": "tom-dillon-t9Eaei-jz7Y-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/tom-dillon-t9Eaei-jz7Y-unsplash.jpg",
+            "size": {
+                "width": 5184,
+                "height": 3456
+            },
+            "state": 2,
+            "type": 1
+        },
+        "13b81bfeba40070df2fafdf679f32f03": {
+            "format": "jpg",
+            "id": "13b81bfeba40070df2fafdf679f32f03",
+            "name": "tyler-nix-ahee6DMcUcI-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/tyler-nix-ahee6DMcUcI-unsplash.jpg",
+            "size": {
+                "width": 3719,
+                "height": 5578
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f034d4a2940c26de8440cc84ff41f69a": {
+            "format": "jpg",
+            "id": "f034d4a2940c26de8440cc84ff41f69a",
+            "name": "untitled-photo-3d6zCZ4lpBE-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/untitled-photo-3d6zCZ4lpBE-unsplash.jpg",
+            "size": {
+                "width": 4592,
+                "height": 3056
+            },
+            "state": 2,
+            "type": 1
+        },
+        "56b4cdb2c2574fbbc8e9b413400d4e4f": {
+            "format": "jpg",
+            "id": "56b4cdb2c2574fbbc8e9b413400d4e4f",
+            "name": "will-porada-ZaGcU6BxJEc-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/will-porada-ZaGcU6BxJEc-unsplash.jpg",
+            "size": {
+                "width": 5760,
+                "height": 3840
+            },
+            "state": 2,
+            "type": 1
+        },
+        "03fbcaeffd63a583be58cdeb5b59d43d": {
+            "format": "jpg",
+            "id": "03fbcaeffd63a583be58cdeb5b59d43d",
+            "name": "yannis-h-Sqez8_QTi8o-unsplash.jpg",
+            "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/yannis-h-Sqez8_QTi8o-unsplash.jpg",
+            "size": {
+                "width": 3456,
+                "height": 5184
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}

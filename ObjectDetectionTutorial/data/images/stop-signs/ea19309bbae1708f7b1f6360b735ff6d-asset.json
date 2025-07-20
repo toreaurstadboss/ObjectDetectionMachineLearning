@@ -1,0 +1,79 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "ea19309bbae1708f7b1f6360b735ff6d",
+        "name": "alexandre-lecocq-ndBWgMLw6Bc-unsplash.jpg",
+        "path": "file:C:/src/MLNetHelpers/ObjectDetectionTutorial/data/images/stop-signs/alexandre-lecocq-ndBWgMLw6Bc-unsplash.jpg",
+        "size": {
+            "width": 4309,
+            "height": 2426
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "v7rDwtieE0",
+            "type": "RECTANGLE",
+            "tags": [
+                "Stop-Sign"
+            ],
+            "boundingBox": {
+                "height": 158.71028037383178,
+                "width": 156.6159732185557,
+                "left": 1302.3854615016737,
+                "top": 1737.8260407816483
+            },
+            "points": [
+                {
+                    "x": 1302.3854615016737,
+                    "y": 1737.8260407816483
+                },
+                {
+                    "x": 1459.0014347202293,
+                    "y": 1737.8260407816483
+                },
+                {
+                    "x": 1459.0014347202293,
+                    "y": 1896.53632115548
+                },
+                {
+                    "x": 1302.3854615016737,
+                    "y": 1896.53632115548
+                }
+            ]
+        },
+        {
+            "id": "jjmx3O_itD",
+            "type": "RECTANGLE",
+            "tags": [
+                "Stop-Sign"
+            ],
+            "boundingBox": {
+                "height": 181.38317757009347,
+                "width": 193.70923003347679,
+                "left": 2784.0549976087996,
+                "top": 1702.786108751062
+            },
+            "points": [
+                {
+                    "x": 2784.0549976087996,
+                    "y": 1702.786108751062
+                },
+                {
+                    "x": 2977.764227642276,
+                    "y": 1702.786108751062
+                },
+                {
+                    "x": 2977.764227642276,
+                    "y": 1884.1692863211554
+                },
+                {
+                    "x": 2784.0549976087996,
+                    "y": 1884.1692863211554
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}
