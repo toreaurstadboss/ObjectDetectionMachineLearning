@@ -2,7 +2,7 @@
 
 This project demonstrates how to implement object detection using machine learning techniques
 
-![stopsign7.png](./stopsign7.png)
+![stopsign7.png](./stopsign7.png)   
 
 This solution consists of three projects:
 
